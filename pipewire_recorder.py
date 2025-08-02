@@ -18,7 +18,7 @@ import numpy as np
 import wave
 
 class PipeWireRecorder:
-    def __init__(self, threshold_db=-40, min_recording_seconds=2, use_sound_monitoring=True, interval_seconds=5):
+    def __init__(self, threshold_db=-60, min_recording_seconds=5, use_sound_monitoring=True, interval_seconds=10):
         self.threshold_db = threshold_db  # Now using actual dB values (e.g., -40 dB)
         self.min_recording_seconds = min_recording_seconds
         self.use_sound_monitoring = use_sound_monitoring
