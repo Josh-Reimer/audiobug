@@ -1,0 +1,5 @@
+pyaudio
+wave
+numpy
+webrtcvad
+pydub
