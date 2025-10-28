@@ -1,0 +1,14 @@
+version: '3.8'
+
+services:
+  audio-recorder:
+    build: .
+    container_name: usb-microphone-recorder
+    devices:
+      - /dev/snd:/dev/snd  # Share audio devices
+    volumes:
+      - ./6hour-watch:/app/6hour-watch:rw  # Persist recordings with read-write
+    environment:
+      - PULSE_SERVER=unix:/run/user/1000/pulse/native  # Optional: for PulseAudio
+    restart: unless-stopped
+    privileged: true  # Needed for audio device access
